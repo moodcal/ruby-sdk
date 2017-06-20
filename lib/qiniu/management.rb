@@ -74,6 +74,11 @@ module Qiniu
           return HTTP.management_post(url)
         end # delete
 
+        def chtype(bucket, key, stype)
+          url = Config.settings[:rs_host] + '/chtype/' + encode_entry_uri(bucket, key) + "/type/#{stype}"
+          return HTTP.management_post(url)
+        end # chtype
+
         def fetch(bucket, target_url, key)
           url = Config.fetch_host(bucket) + '/fetch/' + Utils.urlsafe_base64_encode(target_url) + '/to/' + encode_entry_uri(bucket, key)
           return HTTP.management_post(url)

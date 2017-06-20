@@ -117,6 +117,11 @@ module Qiniu
         code == StatusOK
       end
 
+      def chtype(bucket, key, stype)
+        code, data = Storage.chtype(bucket, key, stype)
+        code == StatusOK
+      end
+
       def delete(bucket, key)
         code, data = Storage.delete(bucket, key)
         code == StatusOK
