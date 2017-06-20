@@ -118,6 +118,11 @@ module Qiniu
         code == StatusOK
       end
 
+      def chtype(bucket, key, stype)
+        code, data = Storage.chtype(bucket, key, stype)
+        code == StatusOK
+      end
+
       def fetch(bucket, target_url, key)
         code, data = Storage.fetch(bucket, target_url, key)
         code == StatusOK
