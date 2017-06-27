@@ -41,7 +41,7 @@ module Qiniu
           params[:persistentOps] = @persistent_ops if !@persistent_ops.nil? && !@persistent_ops.empty?
           params[:persistentNotifyUrl] = @persistent_notify_url if !@persistent_notify_url.nil? && !@persistent_notify_url.empty?
           params[:persistentPipeline] = @persistent_pipeline if !@persistent_pipeline.nil? && !@persistent_pipeline.empty?
-          params[:fileType] = 1
+          # params[:fileType] = 1
 
           Utils.urlsafe_base64_encode(params.to_json)
         end
